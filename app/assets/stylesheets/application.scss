@@ -1,0 +1,44 @@
+$color_1: white;
+
+body {
+  background: green;
+  color: $color_1;
+  font-size: 62.5%;
+}
+.entry {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .h3 {
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: 2px;
+  }
+}
+.outer {
+  p {
+    text-align: center;
+    font-size: 3em;
+  }
+}
+.source {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 1.4em;
+  a {
+    color: $color_1;
+    text-decoration: underline;
+  }
+}
+.left {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-size: 1.4em;
+  a {
+    color: $color_1;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,4 @@
+const DemoNokogiri = {
+  init: function() {
+  }
+}

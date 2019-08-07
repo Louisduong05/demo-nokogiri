@@ -1,0 +1,26 @@
+.entry
+  h3.h3 How much a dollar really cost?
+  .outer
+    table
+      thead
+        tr
+          th Date time
+          th BUY / SELL
+            | (USD)
+          th BUY / SELL
+            | (GBP)
+          th BUY / SELL
+            | (EUR)
+          th SAVE
+      - @items.each do |i|
+        tbody
+          tr
+            - i[:value].each do |v|
+              td.value = v
+            td = link_to "save", '/', class:"saveValueParallels"
+      
+p.left
+  a href="bdcrate"  BDC Rates
+p.source
+  | Scraped from
+  a href="http://abokifx.com" target="_blank"  abokifx.com

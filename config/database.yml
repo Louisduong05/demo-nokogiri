@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  database: demo_nokogiri_development
+
+test:
+  <<: *default
+  database: demo_nokogiri_test
