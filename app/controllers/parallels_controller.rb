@@ -5,19 +5,23 @@ class ParallelsController < ApplicationController
     require 'open-uri'
     @items = []
     item = {}
-    theme = []
     doc = Nokogiri::HTML(open('https://www.abokifx.com/', :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
 
     entries = doc.css('.lagos-market-rates-inner')
     rates = entries.css('table')[0].css('.table-line')
     rates.each do |r|
+      row = []
       r.css('td').each do |rc|
-        theme.push rc.text
+        row.push rc.text
       end
-      item[:value] = theme
-      @items << item
-      theme = []
-    end      
+      date, usd, gbp, eur = row
+      @items << {
+        date: date,
+        usd: usd,
+        gbp: gbp,
+        eur: eur,
+      }
+    end     
     render template: 'parallels/home'
   end
 

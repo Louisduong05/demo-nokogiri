@@ -12,12 +12,14 @@
           th BUY / SELL
             | (EUR)
           th SAVE
-      - @items.each do |i|
-        tbody
+      tbody
+        - @items.each do |i|
           tr
-            - i[:value].each do |v|
-              td.value = v
-            td = link_to "save", '/', class:"saveValueParallels"
+            td = i[:date]
+            td = i[:usd]
+            td = i[:gbp]
+            td = i[:eur]
+            td = link_to "save", '/', class: "save-currency", data: i
       
 p.left
   a href="bdcrate"  BDC Rates
